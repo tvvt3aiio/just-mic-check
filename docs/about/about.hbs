@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #333;
+                color: white;
+            }
+            a {
+                color: skyblue;
+            }
+        }
+        .container {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .intro {
+            text-align: center;
+        }
+        .licenses-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .license-used-by {
+            margin-top: -10px;
+        }
+        .license-text {
+            max-height: 200px;
+            overflow-y: scroll;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="intro">
+            <h1>Third Party Licenses</h1>
+            <p>This page lists the licenses of the projects used in cargo-about.</p>
+        </div>
+    
+        <h2>Overview of licenses:</h2>
+        <ul class="licenses-overview">
+            {{#each overview}}
+            <li><a href="#{{id}}">{{name}}</a> ({{count}})</li>
+            {{/each}}
+        </ul>
+
+        <h2>All license text:</h2>
+        <ul class="licenses-list">
+            {{#each licenses}}
+            <li class="license">
+                <h3 id="{{id}}">{{name}}</h3>
+                <h4>Used by:</h4>
+                <ul class="license-used-by">
+                    {{#each used_by}}
+                    <li><a href="{{#if crate.repository}} {{crate.repository}} {{else}} https://crates.io/crates/{{crate.name}} {{/if}}">{{crate.name}} {{crate.version}}</a></li>
+                    {{/each}}
+                </ul>
+                <pre class="license-text">{{text}}</pre>
+            </li>
+            {{/each}}
+        </ul>
+    <ul class="licenses-list"><li class="license">
+<h3>Hack font (fonts/Hack-Regular.txt in epaint_default_fonts)</h3>
+<pre class="license-text">The work in the Hack project is Copyright 2018 Source Foundry Authors and licensed under the MIT License
+
+The work in the DejaVu project was committed to the public domain.
+
+Bitstream Vera Sans Mono Copyright 2003 Bitstream Inc. and licensed under the Bitstream Vera License with Reserved Font Names "Bitstream" and "Vera"
+MIT License
+
+Copyright (c) 2018 Source Foundry Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+BITSTREAM VERA LICENSE
+
+Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera is a trademark of Bitstream, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of the fonts accompanying this license ("Fonts") and associated documentation files (the "Font Software"), to reproduce and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute, and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so, subject to the following conditions:
+
+The above copyright and trademark notices and this permission notice shall be included in all copies of one or more of the Font Software typefaces.
+
+The Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or characters may be added to the Fonts, only if the fonts are renamed to names not containing either the words "Bitstream" or the word "Vera".
+
+This License becomes null and void to the extent applicable to Fonts or Font Software that has been modified and is distributed under the "Bitstream Vera" names.
+
+The Font Software may be sold as part of a larger software package but no copy of one or more of the Font Software typefaces may be sold by itself.
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL BITSTREAM OR THE GNOME FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+
+Except as contained in this notice, the names of Gnome, the Gnome Foundation, and Bitstream Inc., shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Font Software without prior written authorization from the Gnome Foundation or Bitstream Inc., respectively. For further information, contact: fonts at gnome dot org.
+</pre>
+</li></ul>
+</main>
+</body>
+
+</html>
